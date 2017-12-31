@@ -6,6 +6,12 @@ public class DataTranslator : MonoBehaviour {
 	private static string KILLS_SYMBOL = "[KILLS]";
 	private static string DEATHS_SYMBOL = "[DEATHS]";
 
+
+	public static string ValuesToData(int kills, int deaths)
+	{
+		return KILLS_SYMBOL + kills + "/" + DEATHS_SYMBOL + deaths;
+	}
+
 	public static int DataToKills (string data)
 	{
 		return int.Parse (DataToValue (data, KILLS_SYMBOL));
@@ -17,14 +23,14 @@ public class DataTranslator : MonoBehaviour {
 		
 	}
 
-	private static string DataToValue(string data, string symbol)
+	private static string DataToValue (string data, string symbol)
 	{
 		string[] pieces = data.Split ('/');
 		foreach (string piece in pieces) 
 		{
 			if (piece.StartsWith (symbol)) 
 			{
-				piece.Substring (symbol.Length);
+				return piece.Substring (symbol.Length);
 			}
 		}
 

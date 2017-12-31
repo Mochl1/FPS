@@ -18,6 +18,10 @@ public class Player : NetworkBehaviour {
 	[SyncVar]
 	private int currentHealth;
 
+	public int kills;
+
+	public int deaths;
+
 	[SerializeField]
 	private Behaviour[] disableOnDeath;
 	private bool[] wasEnabled;
@@ -69,14 +73,14 @@ public class Player : NetworkBehaviour {
 		if (!isLocalPlayer)
 			return;
 	
-		if (Input.GetKeyDown (KeyCode.K)) 
-		{
-			RpcTakeDamage (9999);
-		}
+		//if (Input.GetKeyDown (KeyCode.K)) 
+		//{
+		//	RpcTakeDamage (9999);
+		//}
 	}
 
 	[ClientRpc]
-	public void RpcTakeDamage(int _amount)
+	public void RpcTakeDamage(int _amount, string _sourceID)
 	{
 		if (isDead)
 			return;
@@ -86,14 +90,23 @@ public class Player : NetworkBehaviour {
 
 		if (currentHealth <= 0)
 		{
-			Die ();
+			Die (_sourceID);
 		}
 
 	}
 
-	private void Die()
+	private void Die(string _sourceID)
 	{
 		isDead = true;
+
+		Player sourcePlayer = GameManager.GetPlayer (_sourceID);
+
+		if (sourcePlayer != null) 
+		{
+			sourcePlayer.kills++;
+		}
+
+		deaths++;
 
 		//disable components
 		for (int i = 0; i < disableOnDeath.Length; i++) 
@@ -105,6 +118,8 @@ public class Player : NetworkBehaviour {
 		{
 			disabbleGameObectsOnDeath [i].SetActive (false);
 		}
+
+
 
 
 		Collider _col = GetComponent<Collider> ();

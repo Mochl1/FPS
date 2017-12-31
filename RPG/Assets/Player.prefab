@@ -30,6 +30,7 @@ GameObject:
   - component: {fileID: 114464420164383494}
   - component: {fileID: 114334482046733266}
   - component: {fileID: 114071109230358792}
+  - component: {fileID: 114334458425125932}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -396,6 +397,17 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 10
   m_InterpolateMovement: 1
+--- !u!114 &114334458425125932
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1092748931260456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 829608b50965ee64a986a07ca1cacf36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114334482046733266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -408,6 +420,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  kills: 0
+  deaths: 0
   disableOnDeath:
   - {fileID: 114514800636831458}
   - {fileID: 114464420164383494}
@@ -428,6 +442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 20872300078168936}
+  cameraRotationLimit: 85
   rb: {fileID: 54159285005486692}
 --- !u!114 &114464420164383494
 MonoBehaviour:
