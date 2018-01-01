@@ -18,8 +18,10 @@ public class Player : NetworkBehaviour {
 	[SyncVar]
 	private int currentHealth;
 
-	public int kills;
+	[SyncVar]
+	public string username = "Loading...";
 
+	public int kills;
 	public int deaths;
 
 	[SerializeField]
