@@ -18,6 +18,9 @@ public class Player : NetworkBehaviour {
 	[SyncVar]
 	private int currentHealth;
 
+	[SyncVar]
+	public string username ="Loading... ";
+
 	public int kills;
 	public int deaths;
 
