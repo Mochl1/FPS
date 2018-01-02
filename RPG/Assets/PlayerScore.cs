@@ -21,9 +21,12 @@ public class PlayerScore : MonoBehaviour {
 
 	IEnumerator SyncScoreLoop()
 	{
-		yield return new WaitForSeconds (5f);
-
 		while (true) {
+			
+			yield return new WaitForSeconds (5f);
+
+			
+			
 
 			SyncNow ();
 
