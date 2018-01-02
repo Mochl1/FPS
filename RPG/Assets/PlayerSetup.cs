@@ -28,9 +28,7 @@ public class PlayerSetup : NetworkBehaviour {
 		if (!isLocalPlayer) {
 			DisableComponents ();
 			AssingRemoteLayer ();
-		} 
-		else 
-		{
+		} else {
 			
 
 			SetLayerRecursively (playerGraphics, LayerMask.NameToLayer (dontDrawLayerName));
@@ -39,27 +37,9 @@ public class PlayerSetup : NetworkBehaviour {
 			playerUIInstance.name = playerUIPrefab.name;
 
 			GetComponent<Player> ().SetupPlayer ();
-
-			string _username = "loading...";
-			if (UserAcountManager.isLoggedIn)
-				_username = UserAcountManager.playerUsername;
-			else
-				_username = transform.name;
-			CmdSetUserName (transform.name,_username);
-		}
-
-	}
-
-	[Command]
-	void CmdSetUserName(string playerID, string username)
-	{
-		Player player = GameManager.GetPlayer (playerID);
-		if (player != null) 
-		{
-			Debug.Log (username + " has joined");
-			player.username = username;
 		}
 	}
+
 
 	void SetLayerRecursively(GameObject obj, int newLayer)
 	{
