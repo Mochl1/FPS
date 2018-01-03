@@ -1,0 +1,22 @@
+{
+    "MonoBehaviour": {
+        "m_Enabled": true,
+        "m_EditorHideFlags": 0,
+        "m_Name": "Fbx Export Settings",
+        "m_EditorClassIdentifier": "",
+        "mayaCompatibleNames": true,
+        "centerObjects": true,
+        "launchAfterInstallation": false,
+        "HideSendToUnityMenu": false,
+        "ExportFormatSelection": 0,
+        "IntegrationSavePath": "C:/Users/Usuario/Desktop/Moses/FPS/RPG",
+        "selectedDCCApp": 0,
+        "convertToModelSavePath": "Modern Weapons Pack/M4A1/FBX",
+        "dccOptionNames": [
+            "Maya 2015"
+        ],
+        "dccOptionPaths": [
+            "C:/Program Files/Autodesk/Maya2015/bin/maya.exe"
+        ]
+    }
+}
