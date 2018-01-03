@@ -106,6 +106,7 @@ public class Player : NetworkBehaviour {
 		if (sourcePlayer != null) 
 		{
 			sourcePlayer.kills++;
+			GameManager.instance.onPlayerKilledCallback.Invoke(username, sourcePlayer.username);
 		}
 
 		deaths++;
