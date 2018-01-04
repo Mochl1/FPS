@@ -369,11 +369,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primaryWeapon:
-    name: Glock
+    name: AKM
     damage: 20
     range: 100
     fireRate: 5
-    graphics: {fileID: 1545881251407554, guid: aba4cf1a785560c4bb9dade60afd7a44, type: 2}
+    graphics: {fileID: 1147787532311554, guid: 4f67b1d0ba990e84796a10ae7ef1d323, type: 2}
   weaponHolder: {fileID: 4079652134055338}
   weaponLayerName: Weapon
 --- !u!114 &114181720469021436
