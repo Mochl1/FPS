@@ -34,6 +34,14 @@ public class PlayerShoot : NetworkBehaviour {
 		if (PauseMenu.IsOn)
 			return;
 
+		if (currentWeapon.bullets < currentWeapon.maxBullets) 
+		{
+			if (Input.GetKeyDown (KeyCode.R)) 
+			{
+				weaponManager.Reload ();
+				return;
+			}
+		}
 
 		if (currentWeapon.fireRate <= 0f) {
 			if (Input.GetButtonDown ("Fire1")) {
@@ -68,10 +76,20 @@ public class PlayerShoot : NetworkBehaviour {
 	[Client]
 	void Shoot()
 	{
-		if (!isLocalPlayer) 
-		{
+		if (!isLocalPlayer && !weaponManager.isReloading) {
+			Debug.Log ("Out of bullets.");
 			return;
 		}
+
+
+
+		if (currentWeapon.bullets <= 0) 
+		{
+			weaponManager.Reload();
+			return;
+		}
+		currentWeapon.bullets--;
+		Debug.Log ("Remaining bullets: " + currentWeapon.bullets);
 
 		CmdOnShoot ();
 
@@ -108,5 +126,6 @@ public class PlayerShoot : NetworkBehaviour {
 		Player _player = GameManager.GetPlayer (_PlayerID);
 		_player.RpcTakeDamage (_damage,_sourceID);
 	}
+		
 
 }

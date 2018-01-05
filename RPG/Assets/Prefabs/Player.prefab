@@ -127,7 +127,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1092748931260456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.476619, y: 1.059, z: -15.188954}
+  m_LocalPosition: {x: 8.444671, y: 1.1197768, z: -16.791237}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4209889494950228}
@@ -141,13 +141,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1372958234648344}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.23, y: -0.17, z: 0.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4105790996098364}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4105790996098364
 Transform:
   m_ObjectHideFlags: 1
@@ -373,7 +373,10 @@ MonoBehaviour:
     damage: 20
     range: 100
     fireRate: 5
-    graphics: {fileID: 1147787532311554, guid: 4f67b1d0ba990e84796a10ae7ef1d323, type: 2}
+    maxBullets: 30
+    bullets: 30
+    reloadTime: 1
+    graphics: {fileID: 1205928037878288, guid: 79f4e1726fd3d4e419de6e7f3a216333, type: 2}
   weaponHolder: {fileID: 4079652134055338}
   weaponLayerName: Weapon
 --- !u!114 &114181720469021436
